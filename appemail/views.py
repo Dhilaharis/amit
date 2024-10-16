@@ -1,3 +1,4 @@
+from django.shortcuts import render, redirect,HttpResponse
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -25,4 +26,6 @@ def send_email_with_attachment(username, recipient_email, subject, message, file
     
     # Send email
     email.send()
-
+    
+def home_page(request):
+    return render(request, 'index.html')
